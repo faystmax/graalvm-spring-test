@@ -1,4 +1,4 @@
-package com.faystmax.graalvm.spring.test.web;
+package com.faystmax.graalvm.web;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @GetMapping("/")
     public String hello() {
-        return "Hello from graalVM";
+        return "Hello from GraalVM";
     }
 }

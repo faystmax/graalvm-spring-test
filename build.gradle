@@ -3,6 +3,7 @@ plugins {
     id 'java-library'
     id 'org.springframework.boot' version '2.3.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'com.github.ayltai.spring-graalvm-native-plugin' version '1.0.7'
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
@@ -27,4 +28,17 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+}
+
+nativeImage {
+    mainClassName = 'com.faystmax.graalvm.GraalVMApplication'
+
+    traceClassInitialization   = true
+    reportExceptionStackTraces = true
+    removeUnusedAutoConfig     = true
+    removeYamlSupport          = false
+    maxHeapSize                = '8G'
+    initializeAtBuildTime = [
+            'org.springframework.boot.logging.logback.ColorConverter'
+    ]
 }

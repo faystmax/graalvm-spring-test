@@ -1,4 +1,4 @@
-package com.faystmax.graalvm.spring.test;
+package com.faystmax.graalvm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
