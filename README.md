@@ -1,14 +1,20 @@
-# GraalVM Spring test app
+# GraalVM Spring App
+[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/faystmax/graalvm-spring-test/blob/master/LICENSE.md)
+
+This project was created in order to learn how to use [GraalVM](https://www.graalvm.org/) native image builds.
 
 ## Build
-To build this project run this from base directory:
 ```console
-./gradlew clean build
+docker build -t graalvm-spring-test .
 ```
-For windows users:
+Remember you will need [docker](https://www.docker.com/) installed on your OS!
+
+## Run
+
 ```console
-gradlew.bat clean build
+docker run -p 80:8080 graalvm-spring-test
 ```
+After this you can open http://localhost:80/ in your browser.
 
 ## License
 
